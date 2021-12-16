@@ -19,7 +19,7 @@ const FirstFold = () => {
           <div
             className={cn(s.textWrapper)}
             data-scroll
-            data-scroll-speed="-0.6"
+            data-scroll-speed="-0.8"
           >
             <p className={cn(s.text)}>
               Look, another <strike>cool</strike> dev with black & white stock
@@ -37,7 +37,7 @@ const FirstFold = () => {
           <div
             className={cn(s.textWrapper)}
             data-scroll
-            data-scroll-speed="-0.6"
+            data-scroll-speed="-0.8"
           >
             <p className={cn(s.text)}>Horizontal scroll? Pfft!</p>
             <span className={cn(s.subtext)}>
@@ -54,7 +54,7 @@ const FirstFold = () => {
           <div
             className={cn(s.textWrapper)}
             data-scroll
-            data-scroll-speed="-0.6"
+            data-scroll-speed="-0.8"
           >
             <p className={cn(s.text)}>Man, they told me you knew your shit.</p>
             <span className={cn(s.subtext)}>Mountains? Seriously?</span>
@@ -69,7 +69,7 @@ const FirstFold = () => {
           <div
             className={cn(s.textWrapper)}
             data-scroll
-            data-scroll-speed="-0.6"
+            data-scroll-speed="-0.8"
           >
             <p className={cn(s.text)}>Anyways. Since I’m already here</p>
             <span className={cn(s.subtext)}>Wasting my time...</span>
@@ -80,7 +80,7 @@ const FirstFold = () => {
           <div
             className={cn(s.textWrapper)}
             data-scroll
-            data-scroll-speed="-0.6"
+            data-scroll-speed="-0.8"
           >
             <p className={cn(s.text)}>
               Why don’t you tell me <br /> something about you?

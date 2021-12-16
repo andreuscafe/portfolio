@@ -1,8 +1,9 @@
 @import "/styles/mixins.scss";
 
 .home {
+  background-color: var(--bg);
+
   .main {
-    background-color: #f0f0f0;
     height: 100vh;
     padding-top: vw(223.5px);
     display: flex;
