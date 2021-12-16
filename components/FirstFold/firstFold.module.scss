@@ -1,0 +1,60 @@
+@import "/styles/mixins.scss";
+
+.firstFold {
+  height: 100%;
+  display: flex;
+  flex-wrap: nowrap;
+
+  .presentationWrapper {
+    display: flex;
+    flex: 0 0 auto;
+
+    .textPage,
+    .imagePage {
+      flex: 0 0 auto;
+      height: 100%;
+
+      &:not(:last-child) {
+        border-right: vw(10px) solid var(--fg);
+      }
+    }
+
+    .textPage {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      padding: 0 vw(150px);
+      max-width: 55vw;
+
+      &.giantText {
+        max-width: 100vw;
+
+        .textWrapper .text {
+          font-size: vw(100px);
+        }
+      }
+
+      .textWrapper {
+        .text {
+          font-size: vw(60px);
+          margin-bottom: vw(40px);
+        }
+
+        .subtext {
+          font-size: vw(30px);
+        }
+      }
+    }
+
+    .imagePage {
+      padding: 0;
+      position: relative;
+
+      .image {
+        height: 100%;
+        display: block;
+        margin-right: -1px;
+      }
+    }
+  }
+}

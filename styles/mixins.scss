@@ -1,0 +1,52 @@
+@use "sass:math";
+@import "./variables.scss";
+
+// Breakpoints
+
+@mixin mobile {
+  @media (max-width: #{$mobile-breakpoint}) {
+    @content;
+  }
+}
+
+@mixin lightMode {
+  @media #{$light-breakpoint} {
+    @content;
+  }
+}
+
+// Utility
+
+@function vw($px-vw) {
+  @return math.div($px-vw * 100vw, $desktop-viewport);
+}
+
+@function mobile-vw($px-vw) {
+  @return math.div($px-vw * 100vw, $mobile-viewport);
+}
+
+// Layouting
+
+@mixin smallContentWrapper {
+  max-width: var(--content-width-small);
+  margin: 0 auto;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+@mixin contentWrapper {
+  max-width: var(--content-width);
+  margin: 0 auto;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+@mixin gridContentWrapper($columns-count) {
+  display: grid;
+  grid-template-columns: repeat($columns-count, 1fr);
+  column-gap: var(--x-spacer);
+
+  @include mobile {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}

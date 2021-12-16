@@ -1,0 +1,63 @@
+@import "/styles/mixins.scss";
+
+.container {
+  transform: translateZ(0);
+  will-change: transform;
+  max-width: 100%;
+  text-transform: uppercase;
+  position: relative;
+  overflow: hidden;
+
+  &.fixed {
+    position: fixed;
+    top: 0;
+    width: 100vw;
+  }
+
+  .wrapper {
+    width: 100%;
+    white-space: nowrap;
+    display: flex;
+
+    .text {
+      display: inline-flex;
+      flex: 0 0 auto;
+      will-change: transform;
+      animation: marquee 15s linear infinite;
+      align-items: center;
+      font-size: vw(180px);
+      line-height: 15.5vw;
+      text-transform: uppercase;
+      color: var(--fg);
+      font-weight: 800;
+    }
+  }
+
+  &.reverse {
+    .text {
+      animation: marquee-reverse 15s linear infinite;
+    }
+  }
+}
+
+.large {
+  margin: 0.8vw 0 0.6vw 0;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(-200%);
+  }
+}
+
+@keyframes marquee-reverse {
+  0% {
+    transform: translateX(-200%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}

@@ -1,0 +1,21 @@
+@import "/styles/mixins.scss";
+
+.home {
+  .main {
+    background-color: #f0f0f0;
+    height: 100vh;
+    padding-top: vw(223.5px);
+    display: flex;
+
+    .foldsWrapper {
+      height: 95%;
+      min-width: 100vw;
+      border-top: vw(10px) solid var(--fg);
+      border-bottom: vw(10px) solid var(--fg);
+
+      .scrollContainer {
+        height: 100%;
+      }
+    }
+  }
+}
