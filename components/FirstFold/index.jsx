@@ -30,7 +30,11 @@ const FirstFold = () => {
         </div>
 
         <div className={cn(s.imagePage)}>
-          <img src="/images/fold1_1.png" className={cn(s.image)} />
+          <img
+            src="/images/fold1_1.png"
+            className={cn(s.image)}
+            alt="AndreusCafe"
+          />
         </div>
 
         <div className={cn(s.textPage)}>
@@ -47,7 +51,11 @@ const FirstFold = () => {
         </div>
 
         <div className={cn(s.imagePage)}>
-          <img src="/images/fold1_2.png" className={cn(s.image)} />
+          <img
+            src="/images/fold1_2.png"
+            className={cn(s.image)}
+            alt="Mountains"
+          />
         </div>
 
         <div className={cn(s.textPage)}>
@@ -62,7 +70,7 @@ const FirstFold = () => {
         </div>
 
         <div className={cn(s.imagePage)}>
-          <img src="/images/fold1_3.png" className={cn(s.image)} />
+          <img src="/images/fold1_3.png" className={cn(s.image)} alt="Coding" />
         </div>
 
         <div className={cn(s.textPage)}>
