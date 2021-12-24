@@ -14,7 +14,7 @@
       flex: 0 0 auto;
       height: 100%;
 
-      &:not(:last-child) {
+      &:not(.noBorder) {
         border-right: vw(10px) solid var(--fg);
       }
     }
@@ -55,6 +55,10 @@
         display: block;
         margin-right: -1px;
       }
+    }
+
+    .transitionBlock {
+      width: 50vw;
     }
   }
 }

@@ -2,6 +2,8 @@
 
 .home {
   background-color: var(--bg);
+  transition: background-color var(--easing-duration)
+    var(--easing-timing-function);
 
   .main {
     height: 100vh;
@@ -14,8 +16,12 @@
       border-top: vw(10px) solid var(--fg);
       border-bottom: vw(10px) solid var(--fg);
 
+      transition: border-color var(--easing-duration)
+        var(--easing-timing-function);
+
       .scrollContainer {
         height: 100%;
+        display: flex;
       }
     }
   }

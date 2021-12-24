@@ -14,6 +14,12 @@
     width: 100vw;
   }
 
+  &.stopped {
+    .wrapper .text {
+      animation: none;
+    }
+  }
+
   .wrapper {
     width: 100%;
     white-space: nowrap;
@@ -30,6 +36,8 @@
       text-transform: uppercase;
       color: var(--fg);
       font-weight: 800;
+
+      transition: color var(--easing-duration) var(--easing-timing-function);
     }
   }
 

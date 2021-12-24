@@ -1,5 +1,4 @@
 import cn from "clsx";
-import Image from "next/image";
 import { useEffect, useRef } from "react";
 import s from "./firstFold.module.scss";
 
@@ -8,18 +7,22 @@ const FirstFold = () => {
   const contentRef = useRef(null);
 
   useEffect(() => {
-    console.log(contentRef.current.offsetWidth);
     foldRef.current.style.width = `${contentRef.current.offsetWidth}px`;
   }, []);
 
   return (
-    <section ref={foldRef} className={cn(s.firstFold)} data-scroll-section>
-      <div ref={contentRef} className={cn(s.presentationWrapper)}>
+    <section ref={foldRef} className={cn(s.firstFold)}>
+      <div
+        ref={contentRef}
+        className={cn(s.presentationWrapper)}
+        data-scroll-section
+      >
         <div className={cn(s.textPage)}>
           <div
             className={cn(s.textWrapper)}
             data-scroll
-            data-scroll-speed="-0.8"
+            data-scroll-speed="-0.5"
+            data-scroll-delay="0.4"
           >
             <p className={cn(s.text)}>
               Look, another <strike>cool</strike> dev with black & white stock
@@ -41,7 +44,8 @@ const FirstFold = () => {
           <div
             className={cn(s.textWrapper)}
             data-scroll
-            data-scroll-speed="-0.8"
+            data-scroll-speed="-0.5"
+            data-scroll-delay="0.4"
           >
             <p className={cn(s.text)}>Horizontal scroll? Pfft!</p>
             <span className={cn(s.subtext)}>
@@ -62,7 +66,8 @@ const FirstFold = () => {
           <div
             className={cn(s.textWrapper)}
             data-scroll
-            data-scroll-speed="-0.8"
+            data-scroll-speed="-0.5"
+            data-scroll-delay="0.4"
           >
             <p className={cn(s.text)}>Man, they told me you knew your shit.</p>
             <span className={cn(s.subtext)}>Mountains? Seriously?</span>
@@ -77,24 +82,33 @@ const FirstFold = () => {
           <div
             className={cn(s.textWrapper)}
             data-scroll
-            data-scroll-speed="-0.8"
+            data-scroll-speed="-0.5"
+            data-scroll-delay="0.4"
           >
             <p className={cn(s.text)}>Anyways. Since I’m already here</p>
             <span className={cn(s.subtext)}>Wasting my time...</span>
           </div>
         </div>
 
-        <div className={cn(s.textPage, s.giantText)}>
+        <div className={cn(s.textPage, s.giantText, s.noBorder)}>
           <div
             className={cn(s.textWrapper)}
             data-scroll
-            data-scroll-speed="-0.8"
+            data-scroll-speed="-0.5"
+            data-scroll-delay="0.4"
           >
             <p className={cn(s.text)}>
               Why don’t you tell me <br /> something about you?
             </p>
           </div>
         </div>
+
+        <div
+          className={cn(s.transitionBlock)}
+          data-scroll
+          data-scroll-id="firstAndSecond"
+          data-scroll-repeat
+        ></div>
       </div>
     </section>
   );

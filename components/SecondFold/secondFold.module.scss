@@ -1,0 +1,35 @@
+@import "/styles/mixins.scss";
+
+.secondFold {
+  height: 100%;
+  display: flex;
+  flex-wrap: nowrap;
+
+  .nameAndPicWrapper {
+    display: flex;
+    height: 100%;
+    align-items: center;
+
+    .textWrapper {
+      display: flex;
+      flex-direction: column;
+      font-weight: 900;
+      z-index: 1;
+
+      .okay {
+        font-size: vw(24px);
+      }
+
+      .name {
+        font-size: vw(224px);
+      }
+    }
+
+    .pic {
+      flex: 0 0 auto;
+      height: 100%;
+      margin-left: -10vw;
+      z-index: 0;
+    }
+  }
+}

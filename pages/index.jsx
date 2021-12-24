@@ -1,38 +1,41 @@
 import clsx from "clsx";
 import Head from "next/head";
-import { useEffect } from "react";
-import FirstFold from "../components/FirstFold";
+import { useLocomotiveScroll } from "react-locomotive-scroll";
 import Marquee from "../components/Marquee";
+import FirstFold from "../components/FirstFold";
+import SecondFold from "../components/SecondFold";
 import s from "../styles/Home.module.scss";
+import { useEffect } from "react";
+import useStore from "../utils/store";
 
 export default function Home() {
+  const { scroll } = useLocomotiveScroll();
+
   useEffect(() => {
-    let scroll = {};
-    import("locomotive-scroll").then((locomotiveModule) => {
-      scroll = new locomotiveModule.default({
-        el: document.querySelector("[data-scroll-container]"),
-        smooth: true,
-        mobile: {
-          smooth: true
-        },
-        tablet: {
-          breakpoint: 0,
-          smooth: true
-        },
-        resetNativeScroll: true,
-        reloadOnContextChange: true,
-        direction: "horizontal",
-        lerp: 0.1
+    if (scroll) {
+      scroll.on("scroll", (args) => {
+        const { limit, scroll } = args;
+        const progress = (scroll.x / limit.x) * 100;
+
+        useStore.setState({ scrollProgress: progress });
+
+        // Get all current elements : args.currentElements
+        if (typeof args.currentElements["firstAndSecond"] === "object") {
+          let progress = args.currentElements["firstAndSecond"].progress;
+
+          console.log(progress);
+
+          if (progress > 0.5) {
+            document.documentElement.style.setProperty("--bg", "var(--black)");
+            document.documentElement.style.setProperty("--fg", "var(--white)");
+          } else {
+            document.documentElement.style.setProperty("--bg", "var(--white)");
+            document.documentElement.style.setProperty("--fg", "var(--black)");
+          }
+        }
       });
-    });
-
-    setTimeout(() => {
-      scroll.update();
-    }, 600);
-
-    // `useEffect`'s cleanup phase
-    return () => scroll.destroy();
-  });
+    }
+  }, [scroll]);
 
   return (
     <div className={s.home}>
@@ -43,10 +46,11 @@ export default function Home() {
       </Head>
 
       <main className={s.main}>
-        <Marquee text="andreuscafe" fixed />
+        <Marquee text="andreuscafe" fixed stopped />
         <section className={clsx(s.foldsWrapper)}>
-          <div className={clsx(s.scrollContainer)} data-scroll-container>
+          <div className={clsx(s.scrollContainer)}>
             <FirstFold />
+            <SecondFold scroll={scroll} />
           </div>
         </section>
       </main>
