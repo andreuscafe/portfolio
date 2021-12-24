@@ -20,7 +20,7 @@ const SecondFold = () => {
         <div className={cn(s.nameAndPicWrapper)}>
           <h2 className={cn(s.textWrapper)}>
             <span className={cn(s.okay)}>Okay,</span>
-            <span className={cn(s.name)}>I'm Andrés</span>
+            <span className={cn(s.name)}>I&apos;m Andrés</span>
           </h2>
           <img src="/images/fold2_1.png" className={cn(s.pic)} alt="Andrés" />
         </div>
