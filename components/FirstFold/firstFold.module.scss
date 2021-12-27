@@ -26,6 +26,10 @@
       padding: 0 vw(150px);
       max-width: 55vw;
 
+      &:first-child {
+        max-width: 65vw;
+      }
+
       &.giantText {
         max-width: 100vw;
 
@@ -49,6 +53,8 @@
     .imagePage {
       padding: 0;
       position: relative;
+      width: 35vw;
+      overflow: hidden;
 
       .image {
         height: 100%;

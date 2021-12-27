@@ -25,11 +25,13 @@
       }
     }
 
-    .pic {
+    .imageWrapper {
+      position: relative;
       flex: 0 0 auto;
       height: 100%;
-      margin-left: -10vw;
+      margin-left: -20vw;
       z-index: 0;
+      width: vw(700px);
     }
   }
 }

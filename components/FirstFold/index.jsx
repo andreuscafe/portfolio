@@ -1,5 +1,6 @@
 import cn from "clsx";
 import { useEffect, useRef } from "react";
+import Image from "next/image";
 import s from "./firstFold.module.scss";
 
 const FirstFold = () => {
@@ -33,11 +34,18 @@ const FirstFold = () => {
         </div>
 
         <div className={cn(s.imagePage)}>
-          <img
+          <Image
+            width={421}
+            height={656}
+            src="/images/fold1_1.png"
+            alt="AndreusCafe"
+            layout="responsive"
+          />
+          {/* <img
             src="/images/fold1_1.png"
             className={cn(s.image)}
             alt="AndreusCafe"
-          />
+          /> */}
         </div>
 
         <div className={cn(s.textPage)}>
@@ -55,11 +63,18 @@ const FirstFold = () => {
         </div>
 
         <div className={cn(s.imagePage)}>
-          <img
+          <Image
+            width={421}
+            height={656}
+            src="/images/fold1_2.png"
+            alt="Mountains"
+            layout="responsive"
+          />
+          {/* <img
             src="/images/fold1_2.png"
             className={cn(s.image)}
             alt="Mountains"
-          />
+          /> */}
         </div>
 
         <div className={cn(s.textPage)}>
@@ -75,7 +90,14 @@ const FirstFold = () => {
         </div>
 
         <div className={cn(s.imagePage)}>
-          <img src="/images/fold1_3.png" className={cn(s.image)} alt="Coding" />
+          <Image
+            width={421}
+            height={656}
+            src="/images/fold1_3.png"
+            alt="Coding"
+            layout="responsive"
+          />
+          {/* <img src="/images/fold1_3.png" className={cn(s.image)} alt="Coding" /> */}
         </div>
 
         <div className={cn(s.textPage)}>
