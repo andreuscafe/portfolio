@@ -12,17 +12,14 @@ function MyApp({ Component, pageProps }) {
       options={{
         smooth: true,
         scrollFromAnywhere: true,
-        mobile: {
-          smooth: false
-        },
         tablet: {
-          breakpoint: 0,
-          smooth: false
+          smooth: true,
+          breakpoint: 0
         },
         resetNativeScroll: true,
         reloadOnContextChange: true,
         direction: "horizontal",
-        lerp: 0.05,
+        lerp: 0.02,
         gestureDirection: "both"
       }}
       watch={[

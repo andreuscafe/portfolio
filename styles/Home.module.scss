@@ -7,21 +7,38 @@
 
   .main {
     height: 100vh;
-    padding-top: vw(223.5px);
+    max-height: -webkit-fill-available;
+    // padding-top: vw(223.5px);
     display: flex;
+    flex-direction: column;
 
     .foldsWrapper {
-      height: 95%;
+      // height: 95%;
+      flex: 0 0 76%;
       min-width: 100vw;
-      border-top: vw(10px) solid var(--fg);
-      border-bottom: vw(10px) solid var(--fg);
 
-      transition: border-color var(--easing-duration)
-        var(--easing-timing-function);
+      // @include mobile {
+      // }
 
       .scrollContainer {
         height: 100%;
         display: flex;
+        border-top: vw(10px) solid var(--fg);
+        border-bottom: vw(10px) solid var(--fg);
+        overflow-y: hidden;
+
+        transition: border-color var(--easing-duration)
+          var(--easing-timing-function);
+
+        @media (hover: none) {
+          overflow-x: auto;
+        }
+
+        > section {
+          flex: 0 0 auto;
+          height: 100.2%;
+          margin-top: -0.01%;
+        }
       }
     }
   }

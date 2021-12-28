@@ -233,6 +233,7 @@ html.has-scroll-dragging {
 
   // Transitions
   --easing-duration: 0.6s;
+  --easing-duration-long: 1.4s;
   --easing-timing-function: ease-in-out;
 }
 
@@ -244,12 +245,16 @@ body {
   overflow: hidden;
 
   color: var(--fg);
-  transition: color var(--easing-duration) var(--easing-timing-function);
+  transition: color var(--easing-duration-long) var(--easing-timing-function);
 }
 
 a {
   color: inherit;
   text-decoration: none;
+}
+
+b {
+  font-weight: 900;
 }
 
 html.has-scroll-smooth {

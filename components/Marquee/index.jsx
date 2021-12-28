@@ -9,7 +9,7 @@ const Marquee = ({ text = "ANDREUSCAFE", fixed = false, stopped = false }) => {
   const textRef = useRef(null);
 
   useEffect(() => {
-    textRef.current.style.transform = `translateX(-${scrollProgress / 4}%)`;
+    textRef.current.style.transform = `translateX(-${scrollProgress / 3}%)`;
   }, [scrollProgress]);
 
   return (

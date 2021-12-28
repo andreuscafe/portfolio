@@ -7,6 +7,7 @@
   text-transform: uppercase;
   position: relative;
   overflow: hidden;
+  flex: 0 0 auto;
 
   &.fixed {
     position: fixed;
@@ -31,13 +32,15 @@
       will-change: transform;
       animation: marquee 15s linear infinite;
       align-items: center;
-      font-size: vw(180px);
-      line-height: 15.5vw;
+      // font-size: vw(180px);
+      font-size: 20vh;
+      line-height: 20vh;
       text-transform: uppercase;
       color: var(--fg);
       font-weight: 800;
 
-      transition: color var(--easing-duration) var(--easing-timing-function);
+      transition: color var(--easing-duration-long)
+        var(--easing-timing-function);
     }
   }
 

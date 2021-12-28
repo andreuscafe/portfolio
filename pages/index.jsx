@@ -7,13 +7,20 @@ import SecondFold from "../components/SecondFold";
 import s from "../styles/Home.module.scss";
 import { useEffect } from "react";
 import useStore from "../utils/store";
+import { lerpColor } from "../utils/utils";
 
 export default function Home() {
-  const { scroll } = useLocomotiveScroll();
+  const { scroll: loco } = useLocomotiveScroll();
 
   useEffect(() => {
-    if (scroll) {
-      scroll.on("scroll", (args) => {
+    if (loco) {
+      console.log(scroll);
+
+      setTimeout(() => {
+        loco.update();
+      }, 1000);
+
+      loco.on("scroll", (args) => {
         const { limit, scroll } = args;
         const progress = (scroll.x / limit.x) * 100;
 
@@ -23,19 +30,37 @@ export default function Home() {
         if (typeof args.currentElements["firstAndSecond"] === "object") {
           let progress = args.currentElements["firstAndSecond"].progress;
 
-          console.log(progress);
-
           if (progress > 0.5) {
-            document.documentElement.style.setProperty("--bg", "var(--black)");
-            document.documentElement.style.setProperty("--fg", "var(--white)");
+            if (!useStore.getState().isDark) {
+              useStore.setState({ isDark: true });
+
+              document.documentElement.style.setProperty(
+                "--bg",
+                "var(--black)"
+              );
+              document.documentElement.style.setProperty(
+                "--fg",
+                "var(--white)"
+              );
+            }
           } else {
-            document.documentElement.style.setProperty("--bg", "var(--white)");
-            document.documentElement.style.setProperty("--fg", "var(--black)");
+            if (useStore.getState().isDark) {
+              useStore.setState({ isDark: false });
+
+              document.documentElement.style.setProperty(
+                "--bg",
+                "var(--white)"
+              );
+              document.documentElement.style.setProperty(
+                "--fg",
+                "var(--black)"
+              );
+            }
           }
         }
       });
     }
-  }, [scroll]);
+  }, [loco]);
 
   return (
     <div className={s.home}>
@@ -46,11 +71,11 @@ export default function Home() {
       </Head>
 
       <main className={s.main}>
-        <Marquee text="andreuscafe" fixed stopped />
+        <Marquee text="andreuscafe•" stopped />
         <section className={clsx(s.foldsWrapper)}>
           <div className={clsx(s.scrollContainer)}>
             <FirstFold />
-            <SecondFold scroll={scroll} />
+            <SecondFold />
           </div>
         </section>
       </main>

@@ -2,6 +2,7 @@ import cn from "clsx";
 import { useEffect, useRef } from "react";
 import Image from "next/image";
 import s from "./firstFold.module.scss";
+import TypeIt from "typeit-react";
 
 const FirstFold = () => {
   const foldRef = useRef(null);
@@ -12,22 +13,21 @@ const FirstFold = () => {
   }, []);
 
   return (
-    <section ref={foldRef} className={cn(s.firstFold)}>
-      <div
-        ref={contentRef}
-        className={cn(s.presentationWrapper)}
-        data-scroll-section
-      >
+    <section ref={foldRef} className={cn(s.firstFold)} data-scroll-section>
+      <div ref={contentRef} className={cn(s.presentationWrapper)}>
         <div className={cn(s.textPage)}>
           <div
             className={cn(s.textWrapper)}
             data-scroll
             data-scroll-speed="-0.5"
-            data-scroll-delay="0.4"
+            data-scroll-delay="0.08"
+            data-scroll-class="view"
           >
             <p className={cn(s.text)}>
-              Look, another <strike>cool</strike> dev with black & white stock
-              pics...
+              <TypeIt options={{ waitUntilVisible: true, speed: 80 }}>
+                Look, another <strike>nerd</strike> dev with black & white stock
+                pics...
+              </TypeIt>
             </p>
             <span className={cn(s.subtext)}>What a surprise.</span>
           </div>
@@ -35,11 +35,12 @@ const FirstFold = () => {
 
         <div className={cn(s.imagePage)}>
           <Image
-            width={421}
-            height={656}
             src="/images/fold1_1.png"
+            priority
             alt="AndreusCafe"
-            layout="responsive"
+            layout="fill"
+            objectFit="cover"
+            objectPosition="top"
           />
           {/* <img
             src="/images/fold1_1.png"
@@ -53,9 +54,14 @@ const FirstFold = () => {
             className={cn(s.textWrapper)}
             data-scroll
             data-scroll-speed="-0.5"
-            data-scroll-delay="0.4"
+            data-scroll-delay="0.08"
+            data-scroll-class="view"
           >
-            <p className={cn(s.text)}>Horizontal scroll? Pfft!</p>
+            <p className={cn(s.text)}>
+              <TypeIt options={{ waitUntilVisible: true, speed: 80 }}>
+                Horizontal scroll? Pfft!
+              </TypeIt>
+            </p>
             <span className={cn(s.subtext)}>
               I’ve seen that like 999999 times.
             </span>
@@ -64,11 +70,11 @@ const FirstFold = () => {
 
         <div className={cn(s.imagePage)}>
           <Image
-            width={421}
-            height={656}
             src="/images/fold1_2.png"
             alt="Mountains"
-            layout="responsive"
+            layout="fill"
+            objectFit="cover"
+            priority
           />
           {/* <img
             src="/images/fold1_2.png"
@@ -82,20 +88,25 @@ const FirstFold = () => {
             className={cn(s.textWrapper)}
             data-scroll
             data-scroll-speed="-0.5"
-            data-scroll-delay="0.4"
+            data-scroll-delay="0.08"
+            data-scroll-class="view"
           >
-            <p className={cn(s.text)}>Man, they told me you knew your shit.</p>
+            <p className={cn(s.text)}>
+              <TypeIt options={{ waitUntilVisible: true, speed: 80 }}>
+                Man, they told me you knew your shit.
+              </TypeIt>
+            </p>
             <span className={cn(s.subtext)}>Mountains? Seriously?</span>
           </div>
         </div>
 
         <div className={cn(s.imagePage)}>
           <Image
-            width={421}
-            height={656}
             src="/images/fold1_3.png"
             alt="Coding"
-            layout="responsive"
+            layout="fill"
+            objectFit="cover"
+            priority
           />
           {/* <img src="/images/fold1_3.png" className={cn(s.image)} alt="Coding" /> */}
         </div>
@@ -105,9 +116,14 @@ const FirstFold = () => {
             className={cn(s.textWrapper)}
             data-scroll
             data-scroll-speed="-0.5"
-            data-scroll-delay="0.4"
+            data-scroll-delay="0.08"
+            data-scroll-class="view"
           >
-            <p className={cn(s.text)}>Anyways. Since I’m already here</p>
+            <p className={cn(s.text)}>
+              <TypeIt options={{ waitUntilVisible: true, speed: 80 }}>
+                Anyways. Since I’m already here
+              </TypeIt>
+            </p>
             <span className={cn(s.subtext)}>Wasting my time...</span>
           </div>
         </div>
@@ -117,10 +133,13 @@ const FirstFold = () => {
             className={cn(s.textWrapper)}
             data-scroll
             data-scroll-speed="-0.5"
-            data-scroll-delay="0.4"
+            data-scroll-delay="0.08"
+            data-scroll-class="view"
           >
             <p className={cn(s.text)}>
-              Why don’t you tell me <br /> something about you?
+              <TypeIt options={{ waitUntilVisible: true, speed: 80 }}>
+                Why don’t you tell me <br /> something about you?
+              </TypeIt>
             </p>
           </div>
         </div>

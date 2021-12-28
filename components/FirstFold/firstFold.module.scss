@@ -16,6 +16,8 @@
 
       &:not(.noBorder) {
         border-right: vw(10px) solid var(--fg);
+        transition: border-color var(--easing-duration)
+          var(--easing-timing-function);
       }
     }
 
@@ -24,6 +26,7 @@
       justify-content: center;
       flex-direction: column;
       padding: 0 vw(150px);
+      width: 100%;
       max-width: 55vw;
 
       &:first-child {
@@ -39,6 +42,13 @@
       }
 
       .textWrapper {
+        opacity: 0;
+        transition: opacity 0.6s ease-in-out;
+
+        &:global(.view) {
+          opacity: 1;
+        }
+
         .text {
           font-size: vw(60px);
           margin-bottom: vw(40px);
@@ -46,6 +56,7 @@
 
         .subtext {
           font-size: vw(30px);
+          opacity: 0.6;
         }
       }
     }
