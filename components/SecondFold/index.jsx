@@ -36,6 +36,7 @@ const SecondFold = () => {
               alt="Andrés"
               layout="fill"
               objectFit="cover"
+              priority
             />
           </div>
         </div>
@@ -129,6 +130,63 @@ const SecondFold = () => {
             in the north of Argentina.
           </p>
           {/* <span className={cn(s.subtext)}>La ciudad de la furia.</span> */}
+        </div>
+
+        <div className={cn(s.imagesWrapper, s.small)}>
+          <div
+            className={cn(s.image)}
+            data-scroll
+            data-scroll-speed="-3"
+            data-scroll-delay="0.05"
+            data-scroll-class="view"
+            data-scroll-repeat
+          >
+            <Image
+              priority
+              src="/images/fold2_6.png"
+              alt="Parque 9 de julio"
+              layout="fill"
+              objectFit="cover"
+              objectPosition="center"
+            />
+          </div>
+          <div
+            className={cn(s.image)}
+            data-scroll
+            data-scroll-speed="-3"
+            data-scroll-delay="0.04"
+            data-scroll-class="view"
+            data-scroll-repeat
+          >
+            <Image
+              priority
+              src="/images/fold2_7.png"
+              alt="Amaicha del Valle"
+              layout="fill"
+              objectFit="cover"
+              objectPosition="center"
+            />
+          </div>
+          <div
+            className={cn(s.image)}
+            data-scroll
+            data-scroll-speed="-3"
+            data-scroll-delay="0.03"
+            data-scroll-class="view"
+            data-scroll-repeat
+          >
+            <Image
+              priority
+              src="/images/fold2_8.png"
+              alt="Me and my friend, the donkey"
+              layout="fill"
+              objectFit="cover"
+              objectPosition="top"
+            />
+          </div>
+          <span className={s.donkeyText}>
+            Me with my donkey friend, <br /> in <b>Yerba Buena</b>.
+          </span>
         </div>
       </div>
     </section>

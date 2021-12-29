@@ -5,9 +5,51 @@ class MyDocument extends Document {
     return (
       <Html>
         <Head>
-          <link
+          {/* <link
             href="https://fonts.googleapis.com/css2?family=Sen:wght@400;700;800&display=swap"
             rel="stylesheet"
+          /> */}
+          <link
+            rel="preload"
+            as="font"
+            href="/fonts/Sen-Regular.woff"
+            type="font/woff"
+            crossorigin="anonymous"
+          />
+          <link
+            rel="preload"
+            as="font"
+            href="/fonts/Sen-Regular.woff2"
+            type="font/woff2"
+            crossorigin="anonymous"
+          />
+          <link
+            rel="preload"
+            as="font"
+            href="/fonts/Sen-ExtraBold.woff"
+            type="font/woff"
+            crossorigin="anonymous"
+          />
+          <link
+            rel="preload"
+            as="font"
+            href="/fonts/Sen-ExtraBold.woff2"
+            type="font/woff2"
+            crossorigin="anonymous"
+          />
+          <link
+            rel="preload"
+            as="font"
+            href="/fonts/Sen-Bold.woff"
+            type="font/woff"
+            crossorigin="anonymous"
+          />
+          <link
+            rel="preload"
+            as="font"
+            href="/fonts/Sen-Bold.woff2"
+            type="font/woff2"
+            crossorigin="anonymous"
           />
           <meta
             name="viewport"

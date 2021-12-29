@@ -132,11 +132,14 @@ const FirstFold = () => {
           <div
             className={cn(s.textWrapper)}
             data-scroll
-            data-scroll-speed="-0.5"
-            data-scroll-delay="0.08"
             data-scroll-class="view"
           >
-            <p className={cn(s.text)}>
+            <p
+              className={cn(s.text)}
+              data-scroll
+              data-scroll-speed="-0.5"
+              data-scroll-delay="0.08"
+            >
               <TypeIt options={{ waitUntilVisible: true, speed: 80 }}>
                 Why don’t you tell me <br /> something about you?
               </TypeIt>
