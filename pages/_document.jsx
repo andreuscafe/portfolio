@@ -14,42 +14,42 @@ class MyDocument extends Document {
             as="font"
             href="/fonts/Sen-Regular.woff"
             type="font/woff"
-            crossorigin="anonymous"
+            crossOrigin="anonymous"
           />
           <link
             rel="preload"
             as="font"
             href="/fonts/Sen-Regular.woff2"
             type="font/woff2"
-            crossorigin="anonymous"
+            crossOrigin="anonymous"
           />
           <link
             rel="preload"
             as="font"
             href="/fonts/Sen-ExtraBold.woff"
             type="font/woff"
-            crossorigin="anonymous"
+            crossOrigin="anonymous"
           />
           <link
             rel="preload"
             as="font"
             href="/fonts/Sen-ExtraBold.woff2"
             type="font/woff2"
-            crossorigin="anonymous"
+            crossOrigin="anonymous"
           />
           <link
             rel="preload"
             as="font"
             href="/fonts/Sen-Bold.woff"
             type="font/woff"
-            crossorigin="anonymous"
+            crossOrigin="anonymous"
           />
           <link
             rel="preload"
             as="font"
             href="/fonts/Sen-Bold.woff2"
             type="font/woff2"
-            crossorigin="anonymous"
+            crossOrigin="anonymous"
           />
           <meta
             name="viewport"
