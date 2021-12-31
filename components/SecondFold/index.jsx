@@ -117,19 +117,15 @@ const SecondFold = () => {
               objectPosition="top"
             />
           </div>
-
-          {/* <span className={cn(s.stockText)}>
-            <span className={s.small}>🤍</span> Unsplash photographers{" "}
-            <span className={s.small}>🤍</span>
-          </span> */}
         </div>
 
         <div className={cn(s.textWrapper)} data-scroll data-scroll-speed="1">
           <p className={cn(s.text, s.small)}>
-            Although I was born in <b>Tucumán</b>, a small province <br />
-            in the north of Argentina.
+            Although I was born in <b>Tucumán</b>,
           </p>
-          {/* <span className={cn(s.subtext)}>La ciudad de la furia.</span> */}
+          <span className={cn(s.subtext)}>
+            a small province in the north of Argentina.
+          </span>
         </div>
 
         <div className={cn(s.imagesWrapper, s.small)}>

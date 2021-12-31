@@ -59,7 +59,6 @@
 
         &.small {
           font-size: vw(64px);
-          margin-bottom: 0;
         }
       }
 
@@ -95,6 +94,17 @@
 
         &:global(.view) {
           opacity: 1;
+        }
+
+        img {
+          filter: saturate(0);
+          opacity: 0.6;
+          transition: filter 0.6s ease-in-out, opacity 0.6s ease-in-out;
+
+          &:hover {
+            filter: saturate(1);
+            opacity: 1;
+          }
         }
 
         &:nth-child(1) {
