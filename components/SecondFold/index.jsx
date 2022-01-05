@@ -37,6 +37,10 @@ const SecondFold = () => {
               layout="fill"
               objectFit="cover"
               priority
+              data-scroll
+              data-scroll-class="view"
+              data-scroll-offset="20%"
+              className={cn(s.image)}
             />
           </div>
         </div>

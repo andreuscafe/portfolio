@@ -41,6 +41,9 @@ const FirstFold = () => {
             layout="fill"
             objectFit="cover"
             objectPosition="top"
+            data-scroll
+            data-scroll-class="view"
+            className={cn(s.image)}
           />
           {/* <img
             src="/images/fold1_1.png"
@@ -75,6 +78,10 @@ const FirstFold = () => {
             layout="fill"
             objectFit="cover"
             priority
+            data-scroll
+            data-scroll-class="view"
+            data-scroll-offset="20%"
+            className={cn(s.image)}
           />
           {/* <img
             src="/images/fold1_2.png"
@@ -107,6 +114,10 @@ const FirstFold = () => {
             layout="fill"
             objectFit="cover"
             priority
+            data-scroll
+            data-scroll-class="view"
+            data-scroll-offset="20%"
+            className={cn(s.image)}
           />
           {/* <img src="/images/fold1_3.png" className={cn(s.image)} alt="Coding" /> */}
         </div>

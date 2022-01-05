@@ -39,6 +39,15 @@
         margin-left: -20vw;
         z-index: 0;
         width: vw(700px);
+
+        .image {
+          clip-path: inset(50%);
+          transition: clip-path 1.2s ease-out;
+
+          &:global(.view) {
+            clip-path: inset(0%);
+          }
+        }
       }
     }
 
