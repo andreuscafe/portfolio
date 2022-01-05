@@ -14,8 +14,6 @@ export default function Home() {
 
   useEffect(() => {
     if (loco) {
-      console.log(scroll);
-
       setTimeout(() => {
         loco.update();
       }, 1000);

@@ -1,0 +1,15 @@
+// @import "/styles/mixins.scss";
+
+.cursor {
+  $size: 5vh;
+
+  width: $size;
+  height: $size;
+  background-color: var(--white);
+  top: $size / -2;
+  left: $size / -2;
+  position: fixed;
+  border-radius: 50%;
+  mix-blend-mode: exclusion;
+  pointer-events: none;
+}

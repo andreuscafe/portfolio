@@ -239,6 +239,17 @@ html.has-scroll-dragging {
   --easing-timing-function: ease-in-out;
 }
 
+::-moz-selection {
+  /* Code for Firefox */
+  color: var(--bg);
+  background: var(--fg);
+}
+
+::selection {
+  color: var(--bg);
+  background: var(--fg);
+}
+
 html,
 body {
   padding: 0;
@@ -248,6 +259,7 @@ body {
 
   color: var(--fg);
   transition: color var(--easing-duration-long) var(--easing-timing-function);
+  cursor: none;
 }
 
 a {
