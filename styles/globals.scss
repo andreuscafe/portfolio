@@ -256,6 +256,8 @@ body {
   margin: 0;
   font-family: "Sen", Ubuntu, sans-serif;
   overflow: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 
   color: var(--fg);
   transition: color var(--easing-duration-long) var(--easing-timing-function);
@@ -278,4 +280,21 @@ html.has-scroll-smooth {
   right: 0;
   top: 0;
   bottom: 0;
+}
+
+// Utils
+.pointerEventsNone {
+  pointer-events: none;
+}
+
+.exclusion {
+  mix-blend-mode: exclusion;
+}
+
+.bw {
+  filter: saturate(0);
+}
+
+.zIndex100 {
+  z-index: 100;
 }

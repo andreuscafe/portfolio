@@ -21,8 +21,10 @@ export default function Home() {
       loco.on("scroll", (args) => {
         const { limit, scroll } = args;
         const progress = (scroll.x / limit.x) * 100;
+        const preDelta = (args.delta.x - args.scroll.x) / 100;
+        const delta = preDelta > 10 ? 10 : preDelta;
 
-        useStore.setState({ scrollProgress: progress });
+        useStore.setState({ scrollProgress: progress, delta });
 
         // Get all current elements : args.currentElements
         if (typeof args.currentElements["firstAndSecond"] === "object") {

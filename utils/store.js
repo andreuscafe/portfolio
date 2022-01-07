@@ -2,6 +2,7 @@ import create from "zustand";
 
 const useStore = create((set) => ({
   scrollProgress: 0,
+  delta: 0,
   isDark: false,
   mouse: {
     x: -100,

@@ -3,14 +3,20 @@ import { useEffect, useRef } from "react";
 import Image from "next/image";
 import s from "./firstFold.module.scss";
 import TypeIt from "typeit-react";
+import useStore from "../../utils/store";
 
 const FirstFold = () => {
   const foldRef = useRef(null);
   const contentRef = useRef(null);
+  const { delta } = useStore();
 
   useEffect(() => {
     foldRef.current.style.width = `${contentRef.current.offsetWidth}px`;
   }, []);
+
+  useEffect(() => {
+    contentRef.current.style.transform = `skewX(${delta * -0.6}deg)`;
+  }, [delta]);
 
   return (
     <section ref={foldRef} className={cn(s.firstFold)} data-scroll-section>
@@ -24,7 +30,7 @@ const FirstFold = () => {
             data-scroll-class="view"
           >
             <p className={cn(s.text)}>
-              <TypeIt options={{ waitUntilVisible: true, speed: 80 }}>
+              <TypeIt options={{ waitUntilVisible: true, speed: 60 }}>
                 Look, another <strike>nerd</strike> dev with black & white stock
                 pics...
               </TypeIt>
@@ -61,7 +67,7 @@ const FirstFold = () => {
             data-scroll-class="view"
           >
             <p className={cn(s.text)}>
-              <TypeIt options={{ waitUntilVisible: true, speed: 80 }}>
+              <TypeIt options={{ waitUntilVisible: true, speed: 60 }}>
                 Horizontal scroll? Pfft!
               </TypeIt>
             </p>
@@ -99,7 +105,7 @@ const FirstFold = () => {
             data-scroll-class="view"
           >
             <p className={cn(s.text)}>
-              <TypeIt options={{ waitUntilVisible: true, speed: 80 }}>
+              <TypeIt options={{ waitUntilVisible: true, speed: 60 }}>
                 Man, they told me you knew your shit.
               </TypeIt>
             </p>
@@ -131,8 +137,8 @@ const FirstFold = () => {
             data-scroll-class="view"
           >
             <p className={cn(s.text)}>
-              <TypeIt options={{ waitUntilVisible: true, speed: 80 }}>
-                Anyways. Since I’m already here
+              <TypeIt options={{ waitUntilVisible: true, speed: 60 }}>
+                Anyway. Since I’m already here
               </TypeIt>
             </p>
             <span className={cn(s.subtext)}>Wasting my time...</span>
@@ -151,7 +157,7 @@ const FirstFold = () => {
               data-scroll-speed="-0.5"
               data-scroll-delay="0.08"
             >
-              <TypeIt options={{ waitUntilVisible: true, speed: 80 }}>
+              <TypeIt options={{ waitUntilVisible: true, speed: 60 }}>
                 Why don’t you tell me <br /> something about you?
               </TypeIt>
             </p>

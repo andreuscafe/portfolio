@@ -2,20 +2,27 @@ import cn from "clsx";
 import { useEffect, useRef } from "react";
 import Image from "next/image";
 import s from "./secondFold.module.scss";
+import useStore from "../../utils/store";
 
 const SecondFold = () => {
   const foldRef = useRef(null);
   const contentRef = useRef(null);
+  const imageRef = useRef(null);
+  const { delta } = useStore();
 
   useEffect(() => {
     foldRef.current.style.width = `${contentRef.current.offsetWidth}px`;
   }, []);
 
+  useEffect(() => {
+    imageRef.current.style.transform = `skewX(${delta * 2 * -1}deg)`;
+  }, [delta]);
+
   return (
     <section ref={foldRef} className={cn(s.secondFold)} data-scroll-section>
       <div ref={contentRef} className={cn(s.presentationWrapper)}>
         <div className={cn(s.nameAndPicWrapper)}>
-          <h2 className={cn(s.nameWrapper)}>
+          <h2 className={cn(s.nameWrapper)} ref={imageRef}>
             <span className={cn(s.okay)} data-scroll data-scroll-speed="3">
               Okay,
             </span>
@@ -40,24 +47,27 @@ const SecondFold = () => {
               data-scroll
               data-scroll-class="view"
               data-scroll-offset="20%"
-              className={cn(s.image)}
+              className={cn(s.image, "bw")}
             />
           </div>
         </div>
 
-        <div className={cn(s.textWrapper)} data-scroll data-scroll-speed="1">
+        <div
+          className={cn(s.textWrapper, "pointerEventsNone")}
+          data-scroll
+          data-scroll-speed="2"
+        >
           <p className={cn(s.text)}>
-            Your <b>creative dev</b> based on <b>Buenos Aires</b>
+            Your <b>creative dev</b> based in <br />
+            <span className={cn(s.giantText, "exclusion")}>Buenos Aires</span>
           </p>
           <span className={cn(s.subtext)}>La ciudad de la furia.</span>
         </div>
 
-        <div className={cn(s.imagesWrapper)}>
+        <div className={cn(s.imagesWrapper)} data-scroll data-scroll-speed="-1">
           <div
             className={cn(s.image)}
             data-scroll
-            data-scroll-speed="-3"
-            data-scroll-delay="0.05"
             data-scroll-class="view"
             data-scroll-repeat
           >
@@ -73,8 +83,6 @@ const SecondFold = () => {
           <div
             className={cn(s.image)}
             data-scroll
-            data-scroll-speed="-3"
-            data-scroll-delay="0.04"
             data-scroll-class="view"
             data-scroll-repeat
           >
@@ -90,8 +98,6 @@ const SecondFold = () => {
           <div
             className={cn(s.image)}
             data-scroll
-            data-scroll-speed="-3"
-            data-scroll-delay="0.03"
             data-scroll-class="view"
             data-scroll-repeat
           >
@@ -107,8 +113,6 @@ const SecondFold = () => {
           <div
             className={cn(s.image)}
             data-scroll
-            data-scroll-speed="-3"
-            data-scroll-delay="0.02"
             data-scroll-class="view"
             data-scroll-repeat
           >

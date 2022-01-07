@@ -27,3 +27,27 @@ export const lerpColor = function (a, b, amount) {
 
   return (rr << 16) + (rg << 8) + (rb | 0);
 };
+
+/**
+ * A debounced function wrapper
+ *
+ * @param {Function} func  (function to execute when timeout is over)
+ * @param {Number} timeout  (debouncer timeout in miliseconds. Default: 300)
+ *
+ * @example
+ * const update = debounce(() => updateLocomotive());
+ * window.addEventListener("resize", update);
+ *
+ * @returns {Function}
+ */
+export const debounce = function (func, timeout = 300) {
+  let timer;
+
+  return (...args) => {
+    clearTimeout(timer);
+
+    timer = setTimeout(() => {
+      func.apply(this, args);
+    }, timeout);
+  };
+};
