@@ -8,15 +8,15 @@ import useStore from "../../utils/store";
 const FirstFold = () => {
   const foldRef = useRef(null);
   const contentRef = useRef(null);
-  const { delta } = useStore();
+  // const { delta } = useStore();
 
   useEffect(() => {
     foldRef.current.style.width = `${contentRef.current.offsetWidth}px`;
   }, []);
 
-  useEffect(() => {
-    contentRef.current.style.transform = `skewX(${delta * -0.6}deg)`;
-  }, [delta]);
+  // useEffect(() => {
+  //   contentRef.current.style.transform = `skewX(${delta * -0.6}deg)`;
+  // }, [delta]);
 
   return (
     <section ref={foldRef} className={cn(s.firstFold)} data-scroll-section>
@@ -48,8 +48,8 @@ const FirstFold = () => {
             objectFit="cover"
             objectPosition="top"
             data-scroll
-            data-scroll-class="view"
-            className={cn(s.image)}
+            data-scroll-class="imageRevealInView"
+            className={cn(s.image, "imageReveal")}
           />
           {/* <img
             src="/images/fold1_1.png"
@@ -85,9 +85,8 @@ const FirstFold = () => {
             objectFit="cover"
             priority
             data-scroll
-            data-scroll-class="view"
-            data-scroll-offset="20%"
-            className={cn(s.image)}
+            data-scroll-class="imageRevealInView"
+            className={cn(s.image, "imageReveal")}
           />
           {/* <img
             src="/images/fold1_2.png"
@@ -114,6 +113,7 @@ const FirstFold = () => {
         </div>
 
         <div className={cn(s.imagePage)}>
+          >
           <Image
             src="/images/fold1_3.png"
             alt="Coding"
@@ -121,9 +121,8 @@ const FirstFold = () => {
             objectFit="cover"
             priority
             data-scroll
-            data-scroll-class="view"
-            data-scroll-offset="20%"
-            className={cn(s.image)}
+            data-scroll-class="imageRevealInView"
+            className={cn(s.image, "imageReveal")}
           />
           {/* <img src="/images/fold1_3.png" className={cn(s.image)} alt="Coding" /> */}
         </div>

@@ -45,9 +45,12 @@ const SecondFold = () => {
               objectFit="cover"
               priority
               data-scroll
-              data-scroll-class="view"
+              data-scroll-repeat
+              data-scroll-class="imageRevealInView"
               data-scroll-offset="20%"
-              className={cn(s.image, "bw")}
+              data-scroll-speed="1"
+              data-scroll-direction="vertical"
+              className={cn(s.image, "bw imageReveal")}
             />
           </div>
         </div>
@@ -57,19 +60,44 @@ const SecondFold = () => {
           data-scroll
           data-scroll-speed="2"
         >
-          <p className={cn(s.text)}>
-            Your <b>creative dev</b> based in <br />
-            <span className={cn(s.giantText, "exclusion")}>Buenos Aires</span>
-          </p>
-          <span className={cn(s.subtext)}>La ciudad de la furia.</span>
+          <div className={cn(s.text)}>
+            <p
+              className="textReveal"
+              data-scroll
+              data-scroll-speed="2"
+              data-scroll-class="textRevealInView"
+              data-scroll-delay="0.1"
+            >
+              Your <b>creative dev</b> based in
+            </p>
+            <p
+              className={cn(s.giantText, "exclusion textReveal")}
+              data-scroll
+              data-scroll-speed="2"
+              data-scroll-class="textRevealInView"
+              data-scroll-delay="0.02"
+            >
+              Buenos Aires
+            </p>
+            {/* <p
+              className={cn(s.subtext, "textReveal")}
+              data-scroll
+              data-scroll-speed="2"
+              data-scroll-class="textRevealInView"
+              data-scroll-delay="0.01"
+            >
+              La ciudad de la furia.
+            </p> */}
+          </div>
         </div>
 
         <div className={cn(s.imagesWrapper)} data-scroll data-scroll-speed="-1">
           <div
-            className={cn(s.image)}
+            className={cn(s.image, "imageReveal")}
             data-scroll
-            data-scroll-class="view"
+            data-scroll-class="imageRevealInView"
             data-scroll-repeat
+            data-scroll-offset="10%"
           >
             <Image
               priority
@@ -81,10 +109,11 @@ const SecondFold = () => {
             />
           </div>
           <div
-            className={cn(s.image)}
+            className={cn(s.image, "imageReveal")}
             data-scroll
-            data-scroll-class="view"
+            data-scroll-class="imageRevealInView"
             data-scroll-repeat
+            data-scroll-offset="10%"
           >
             <Image
               priority
@@ -96,10 +125,11 @@ const SecondFold = () => {
             />
           </div>
           <div
-            className={cn(s.image)}
+            className={cn(s.image, "imageReveal")}
             data-scroll
-            data-scroll-class="view"
+            data-scroll-class="imageRevealInView"
             data-scroll-repeat
+            data-scroll-offset="10%"
           >
             <Image
               priority
@@ -111,10 +141,11 @@ const SecondFold = () => {
             />
           </div>
           <div
-            className={cn(s.image)}
+            className={cn(s.image, "imageReveal")}
             data-scroll
-            data-scroll-class="view"
+            data-scroll-class="imageRevealInView"
             data-scroll-repeat
+            data-scroll-offset="10%"
           >
             <Image
               priority
@@ -136,7 +167,7 @@ const SecondFold = () => {
           </span>
         </div>
 
-        <div className={cn(s.imagesWrapper, s.small)}>
+        {/* <div className={cn(s.imagesWrapper, s.small)}>
           <div
             className={cn(s.image)}
             data-scroll
@@ -191,7 +222,7 @@ const SecondFold = () => {
           <span className={s.donkeyText}>
             Me with my donkey friend, <br /> in <b>Yerba Buena</b>.
           </span>
-        </div>
+        </div> */}
       </div>
     </section>
   );

@@ -237,6 +237,10 @@ html.has-scroll-dragging {
   --easing-duration: 0.6s;
   --easing-duration-long: 1.4s;
   --easing-timing-function: ease-in-out;
+
+  // Reveals
+  --text-reveals-duration: 0.6s;
+  --images-reveals-duration: 0.8s;
 }
 
 ::-moz-selection {
@@ -297,4 +301,32 @@ html.has-scroll-smooth {
 
 .zIndex100 {
   z-index: 100;
+}
+
+// reveals
+
+.textReveal {
+  position: relative;
+  opacity: 0;
+  top: 5vh;
+  transition: clip-path var(--text-reveals-duration) ease-in-out,
+    opacity var(--text-reveals-duration) ease-in-out;
+  clip-path: inset(50%);
+}
+
+.textRevealInView {
+  top: 0;
+  opacity: 1;
+  clip-path: inset(0%);
+}
+
+.imageReveal {
+  opacity: 0;
+  transition: clip-path var(--images-reveals-duration) ease-in-out,
+    opacity var(--images-reveals-duration) ease-in-out;
+  clip-path: inset(50%);
+}
+.imageRevealInView {
+  opacity: 1;
+  clip-path: inset(0%);
 }
