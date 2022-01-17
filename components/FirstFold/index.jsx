@@ -113,7 +113,6 @@ const FirstFold = () => {
         </div>
 
         <div className={cn(s.imagePage)}>
-          >
           <Image
             src="/images/fold1_3.png"
             alt="Coding"
